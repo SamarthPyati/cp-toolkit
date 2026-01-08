@@ -12,6 +12,7 @@
 #include <tuple>
 #include <functional>
 #include <cassert>
+
 using namespace std;
 
 #define ll long long
@@ -22,28 +23,38 @@ using namespace std;
 #define pb push_back
 #define ff first
 #define ss second
-#define even(x) (x) % 2 == 0
-#define odd(x) (x) % 2 == 1
-#define sum(v) std::accumulate(all((v)), 0.0)
+#define even(x) ((x) % 2 == 0)
+#define odd(x)  ((x) % 2 == 1)
+#define sum(v) std::accumulate(all((v)), 0LL)
 #define vl std::vector<ll>
 #define vi std::vector<int>
 
-#define SWAP(x, y) (x) ^= (y); (y) ^= (x); (x) ^= (y);
+#define SWAP(x, y) std::swap(x, y)
 
 // Find num of digits of n in base b
 #define digits(n, b) std::floor((std::logf(n) / std::logf(b)) + 1)
 // Find num of digits of n in base 10
 #define digits_b10(n) digits_base(n, 10)
 
-#define OUT_YES cout << "YES" << "\n"
-#define OUT_NO cout << "NO" << "\n"
-#define OUT_NO_SOL cout << "NO SOLUTION" << "\n"
-#define OUT(s) cout << (s) << "\n"
+#define Stmt(S) do { S } while(0)
 
-constexpr const int MOD = 1e9 + 7;
-constexpr const ll INF_LL = 1e18;
-constexpr const int INF_INT = 1e9;
-const ld PI = atanf(1.0f) * 4;
+// Ascii tolower and toupper case for char type
+inline bool is_upper(char c) { return (c >= 'A' && c <= 'Z'); }
+inline bool is_lower(char c) { return (c >= 'a' && c <= 'z'); }
+inline char to_lower(char c) { return (c >= 'A' && c <= 'Z') ? (char)(c - 'A' + 'a') : c; }
+inline char to_upper(char c) { return (c >= 'a' && c <= 'z') ? (char)(c - 'a' + 'A') : c; }
+
+// Outputs
+#define OUT_YES     cout << "YES\n"
+#define OUT_NO      cout << "NO\n"
+#define OUT_NO_SOL  cout << "NO SOLUTION\n"
+#define OUT(s)      cout << (s) << "\n"
+
+// Constants
+#define MOD     1e9 + 7
+#define INF_LL  1e18
+#define INF_INT 1e9
+#define PI      acosf(-1.0L)
 
 template<bool add_one = false, typename T_vector>
 void output_vector(const T_vector &v, int start = 0, int end = -1) {
