@@ -38,6 +38,9 @@ using namespace std;
 
 #define Stmt(S) do { S } while(0)
 
+// Short repeatation macro
+#define Rep(n) for (size_t i = 0; i < n; ++i)
+
 // Ascii tolower and toupper case for char type
 inline bool is_upper(char c) { return (c >= 'A' && c <= 'Z'); }
 inline bool is_lower(char c) { return (c >= 'a' && c <= 'z'); }
