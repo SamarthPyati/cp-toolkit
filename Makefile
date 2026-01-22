@@ -1,7 +1,7 @@
 CXX       := g++
 CXXFLAGS  := -std=c++17 -Wall -Wextra
-TARGET    := solution
 
+TARGET    := solution
 # Configurable by user
 # If SRC name different, then do "make SRC=source.cpp"
 SRC       ?= solution.cpp
@@ -11,9 +11,9 @@ OUTPUT    ?= output.txt
 DEBUG     ?= 0
 
 ifeq ($(DEBUG), 1)
-	CXXFLAGS += -g -DDEBUG
+	CXXFLAGS += -DDEBUG -g -fsanitize=address
 else
-	CXXFLAGS += -O0
+	CXXFLAGS += -O2
 endif
 
 all: run
