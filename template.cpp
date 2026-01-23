@@ -37,7 +37,6 @@ using ld = long double;
 
 // Find num of digits of n in base b
 #define digits(n, b) std::floor((std::logf(n) / std::logf(b)) + 1)
-// Find num of digits of n in base 10
 #define digits_b10(n) digits_base(n, 10)
 #define digit(n) std::string(std::to_string(n)).length()
 
@@ -69,7 +68,6 @@ void output_vector(const T_vector &v, int start = 0, int end = -1) {
         else
             cout << v[i] << (i < end - 1 ? ' ' : '\n');
 }
-
 
 #define TEST_CASE_TEMPLATE
 void solve() {
