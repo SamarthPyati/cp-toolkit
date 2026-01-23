@@ -12,12 +12,15 @@
 #include <tuple>
 #include <functional>
 #include <cassert>
+#include <iomanip>
+#include <cctype>
 
 using namespace std;
 
-#define ll long long
-#define ul unsigned long
-#define ld long double
+using ll = long long;
+using ul = unsigned long;
+using ld = long double;
+
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 #define pb push_back
@@ -28,6 +31,7 @@ using namespace std;
 #define sum(v) std::accumulate(all((v)), 0LL)
 #define vl std::vector<ll>
 #define vi std::vector<int>
+#define sz(x)   ((size_t)(x).size())
 
 #define SWAP(x, y) std::swap(x, y)
 
@@ -35,18 +39,13 @@ using namespace std;
 #define digits(n, b) std::floor((std::logf(n) / std::logf(b)) + 1)
 // Find num of digits of n in base 10
 #define digits_b10(n) digits_base(n, 10)
+#define digit(n) std::string(std::to_string(n)).length()
 
 #define Stmt(S) do { S } while(0)
 
-// Short repeatation macro
-#define Rep(n)          for (size_t i = 0; i < n; ++i)
-#define REP(t, i, n)    for (t i = 0; i < n; ++i)
-
-// Ascii tolower and toupper case for char type
-inline bool is_upper(char c) { return (c >= 'A' && c <= 'Z'); }
-inline bool is_lower(char c) { return (c >= 'a' && c <= 'z'); }
-inline char to_lower(char c) { return (c >= 'A' && c <= 'Z') ? (char)(c - 'A' + 'a') : c; }
-inline char to_upper(char c) { return (c >= 'a' && c <= 'z') ? (char)(c - 'a' + 'A') : c; }
+// Loops
+#define REP(i, n)       for (size_t i = 0; i < (n); ++i)
+#define FOR(t, i, n)    for (t      i = 0; i < (n); ++i)
 
 // Outputs
 #define OUT_YES     cout << "YES\n"
@@ -55,10 +54,10 @@ inline char to_upper(char c) { return (c >= 'a' && c <= 'z') ? (char)(c - 'a' + 
 #define OUT(s)      cout << (s) << "\n"
 
 // Constants
-#define MOD     1e9 + 7
-#define INF_LL  1e18
-#define INF_INT 1e9
-#define PI      acosf(-1.0L)
+constexpr ll MOD = 1e9 + 7;
+constexpr ll INF_LL = 4e18;
+constexpr int INF_INT = 1e9;
+constexpr ld PI = acos(-1.0);
 
 template<bool add_one = false, typename T_vector>
 void output_vector(const T_vector &v, int start = 0, int end = -1) {
