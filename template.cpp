@@ -26,21 +26,21 @@ using ld = long double;
 #define pb push_back
 #define ff first
 #define ss second
-#define even(x) ((x) % 2 == 0)
-#define odd(x)  ((x) % 2 == 1)
 #define sum(v) std::accumulate(all((v)), 0LL)
 #define vl std::vector<ll>
 #define vi std::vector<int>
 #define sz(x)   ((size_t)(x).size())
 
-#define SWAP(x, y) std::swap(x, y)
+// Helpful checkers
+#define is_even(x) ((x) & 1) == 0
+#define is_odd(x)  ((x) & 1) == 1
+#define is_power_of_two(x) ((x) > 0 && ((x) & ((x) - 1)) == 0)
 
-// Find num of digits of n in base b
+// Below works only for unsigned (positive) numbers
 #define digits(n, b) std::floor((std::logf(n) / std::logf(b)) + 1)
 #define digits_b10(n) digits_base(n, 10)
-#define digit(n) std::string(std::to_string(n)).length()
 
-#define Stmt(S) do { S } while(0)
+#define digit(n) std::string(std::to_string(n)).length()
 
 // Loops
 #define REP(i, n)       for (size_t i = 0; i < (n); ++i)
@@ -53,15 +53,14 @@ using ld = long double;
 #define OUT(s)      cout << (s) << "\n"
 
 // Constants
-constexpr ll MOD = 1e9 + 7;
-constexpr ll INF_LL = 4e18;
-constexpr int INF_INT = 1e9;
-constexpr ld PI = acos(-1.0);
+const ll MOD = 1e9 + 7;
+const ll INF_LL = 4e18;
+const int INF_INT = 1e9;
+const ld PI = acos(-1.0);
 
 template<bool add_one = false, typename T_vector>
 void output_vector(const T_vector &v, int start = 0, int end = -1) {
     if (end < 0) end = int(v.size());
-
     for (int i = start; i < end; i++)
         if constexpr (add_one)
             cout << v[i] + 1 << (i < end - 1 ? ' ' : '\n');
