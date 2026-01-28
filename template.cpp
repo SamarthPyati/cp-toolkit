@@ -70,6 +70,7 @@ void output_vector(const T_vector &v, int start = 0, int end = -1) {
 
 #define TEST_CASE_TEMPLATE
 void solve() {
+
 }
 
 int main(void) {
