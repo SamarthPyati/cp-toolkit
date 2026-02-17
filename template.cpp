@@ -26,21 +26,20 @@ using ld = long double;
 #define pb push_back
 #define ff first
 #define ss second
-#define sum(v) std::accumulate(all((v)), 0LL)
+#define sum(v)      std::accumulate(all((v)), 0LL)
+#define sum_n(v, n) std::accumulate(v.begin(), v.begin() + (size_t)(n), 0LL)
 #define vl std::vector<ll>
+#define vu std::vector<ul>
 #define vi std::vector<int>
 #define sz(x)   ((size_t)(x).size())
 
-// Helpful checkers
+// Checkers
 #define is_even(x) ((x) & 1) == 0
 #define is_odd(x)  ((x) & 1) == 1
 #define is_power_of_two(x) ((x) > 0 && ((x) & ((x) - 1)) == 0)
 
-// Below works only for unsigned (positive) numbers
-#define digits(n, b) std::floor((std::logf(n) / std::logf(b)) + 1)
-#define digits_b10(n) digits_base(n, 10)
-
-#define digit(n) std::string(std::to_string(n)).length()
+// Helpers
+#define n_digit(n) (size_t)std::string(std::to_string(n)).length()
 
 // Loops
 #define REP(i, n)       for (size_t i = 0; i < (n); ++i)
